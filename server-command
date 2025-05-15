@@ -1,0 +1,10 @@
+NGINX COMMAND
+
+sudo ln -s /etc/nginx/sites-available/monitor-web.excitech.id /etc/nginx/sites-enabled
+nginx -t
+systemctl restart nginx
+
+DOCKER COMMAND
+
+docker build -t monitor-web:latest .
+docker run -dp 7000:3000 --name monitor-web-container monitor-web:latest
